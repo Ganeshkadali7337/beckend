@@ -23,7 +23,7 @@ app.post("/addproduct", async (req, res) => {
 app.get("/", async (req, res) => {
   try {
     const data = await Product.find();
-    return res.json(data);
+    return res.send('<h1>hi</h1>');
   } catch (err) {
     console.log(err.message);
   }
