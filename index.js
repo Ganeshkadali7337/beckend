@@ -20,7 +20,7 @@ app.post("/addproduct", async (req, res) => {
   }
 });
 
-app.get("/", async (req, res) => {
+app.get("/api/getdata", async (req, res) => {
   try {
     const data = await Product.find();
     return res.json(data);
