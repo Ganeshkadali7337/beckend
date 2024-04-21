@@ -5,6 +5,7 @@ const Product = require("./model");
 
 app.use(express.json());
 
+const PORT = process.env.PORT || 3000;
 mongoose
   .connect("mongodb+srv://ganesh:ganesh@cluster7337.7exrzd7.mongodb.net/")
   .then(() => console.log("db connected..."));
@@ -28,4 +29,4 @@ app.get("/api/getdata", async (req, res) => {
     console.log(err.message);
   }
 });
-app.listen(3000, () => console.log("server running..."));
+app.listen(PORT, () => console.log("server running..."));
