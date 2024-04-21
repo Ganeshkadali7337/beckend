@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const Product = require("./model");
+const cors = require("cors");
+
+app.use(cors());
 
 app.use(express.json());
 
@@ -22,7 +25,7 @@ app.post("/addproduct", async (req, res) => {
   }
 });
 
-app.get("/api/getdata", async (req, res) => {
+app.get("/", async (req, res) => {
   try {
     const data = await Product.find();
     return res.send(data);
